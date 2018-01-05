@@ -2,8 +2,10 @@
 A simple web service to predict Sentiment using CNN.
 
 
+A keras model is trained and saved once. When there is an API call to the web service the model is loaded the first time as a global variable and the sentiment of the text thats is passed in the POST request is predicted.
 
-API USAGE:
+
+## API USAGE:
 
 ```
 curl -i -H "Content-Type: application/json" -X POST -d '{"review":"This movies is good"}' http://localhost:5000/review
@@ -39,3 +41,10 @@ Date: Fri, 05 Jan 2018 23:38:53 GMT
   "sentiment   ": "negative"
 }
 ```
+
+### Improving the Model
+
+This can be done by adding more examples and re-running the training process and saving it.
+
+
+
